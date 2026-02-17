@@ -53,7 +53,7 @@ return `
         <i class="fa-regular fa-eye"></i> Details
       </button>
       
-      <button class="btn btn-primary btn-sm flex-1 shadow-lg shadow-blue-200 hover:shadow-none transition-all rounded-lg addToCart">
+      <button class="btn btn-primary btn-sm flex-1 shadow-lg shadow-blue-200 hover:shadow-none transition-all rounded-lg ">
       <i class="fa-solid fa-cart-plus"></i> Add
       </button>
       </div>
