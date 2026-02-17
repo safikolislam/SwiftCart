@@ -14,8 +14,6 @@ if(status){
 
 
 
-
-
 // Card Template
 const CardTemplate = (product)=>{
 return `
@@ -55,7 +53,7 @@ return `
         <i class="fa-regular fa-eye"></i> Details
       </button>
       
-      <button class="btn btn-primary btn-sm flex-1 shadow-lg shadow-blue-200 hover:shadow-none transition-all rounded-lg">
+      <button class="btn btn-primary btn-sm flex-1 shadow-lg shadow-blue-200 hover:shadow-none transition-all rounded-lg addToCart">
       <i class="fa-solid fa-cart-plus"></i> Add
       </button>
       </div>
@@ -192,7 +190,7 @@ const showModal = (data)=>{
   <p class="font-semibold">Rate: ${data.rating.rate}</p>
  <h4 class="text-gray-400">${data.description}</h4>
   <div class="flex justify-between my-5">
-  <div><button class="btn rounded-lg btn-primary">Add to Cart</button></div>
+  <div><button class="btn rounded-lg btn-primary  addToCart">Add to Cart</button></div>
   <div>   
   <form method="dialog">
        
@@ -232,4 +230,6 @@ const TopProducts = async()=>{
 
  }
  TopProducts()
+
+
 
