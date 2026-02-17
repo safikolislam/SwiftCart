@@ -7,10 +7,17 @@
     <link rel="icon" type="image/png" href="assets/online-store.png">
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+  .active{
+    background:#4f46e5;
+    color:white
+    
+  }
+</style>
 <body>
     <!-- Navbar -->
 <div class=" navbar bg-base-100 shadow-sm fixed bg-white/10 backdrop-blur z-50 top-0 left-0 right-0 ">
@@ -24,16 +31,16 @@
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><a href="index.html">Home</a></li>
      
-        <li><a>Item 2</a></li>
+    
       </ul>
     </div>
-    <a class="text-indigo-500 text-xl">SwiftCart</a>
+    <a href="index.html" class="text-indigo-500 text-xl">SwiftCart</a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       <li><a href="index.html">Home</a></li>
   
-      <li><a>Item 2</a></li>
+     
     </ul>
   </div>
   <div class="navbar-end mr-10 lg:mr-40">
@@ -48,13 +55,140 @@
 <!-- All Category Button -->
  <h1 class="mt-20 text-center text-xl font-semibold text-blue-500">Our Products</h1>
 <div id="category_container" class="flex justify-center gap-5 mt-5">
+  <button id="all_category_btn" onclick="AllProducts()" class="btn  hover:bg-indigo-400 hover:text-white category_button">All</button>
+
 </div>
 
 
 <!-- All Product -->
  <div id="product_container" class="mt-10  max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+ <div  class="relative overflow-hidden mx-5 mt-10 bg-gradient-to-br from-blue-50 to-indigo-100 col-span-full flex flex-col items-center justify-center p-12 rounded-3xl border border-blue-200 shadow-2xl shadow-blue-100/50 group">
+    
+    <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-400 opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity"></div>
+    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-400 opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity"></div>
 
+    <div class="relative transition-all duration-500 transform  bg-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/40">
+        <i class="fa-solid fa-bag-shopping text-white text-2xl animate-bounce"></i>
+        <div class="absolute inset-0 rounded-2xl border-2 border-blue-400 animate-ping opacity-20"></div>
+    </div>
+    
+    <div class="text-center z-10">
+        <h2 class="text-2xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-800 mb-3">
+            সেরা কালেকশনগুলো দেখতে  উপরের বাটনে ক্লিক করুন
+        </h2>
+        <p class="text-blue-600/80 font-medium text-lg max-w-lg mx-auto leading-relaxed">
+            আপনার পছন্দের সব ব্র্যান্ড এবং লেটেস্ট ট্রেন্ড এখন হাতের মুঠোয়। আজই বেছে নিন আপনার সেরাটি!
+        </p>
+    </div>
+
+
+</div>
  </div>
+
+<!-- Skeleton Spinner -->
+
+<div id="skeleton_loader" class="mt-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5 hidden ">
+  
+  <div class="flex flex-col gap-4 w-full">
+    <div class="skeleton h-60 w-full rounded-2xl"></div>
+    <div class="skeleton h-4 w-28"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-10 w-32 mt-2"></div>
+  </div>
+
+  <div class="flex flex-col gap-4 w-full">
+    <div class="skeleton h-60 w-full rounded-2xl"></div>
+    <div class="skeleton h-4 w-28"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-10 w-32 mt-2"></div>
+  </div>
+
+  <div class="flex flex-col gap-4 w-full">
+    <div class="skeleton h-60 w-full rounded-2xl"></div>
+    <div class="skeleton h-4 w-28"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-10 w-32 mt-2"></div>
+  </div>
+
+  <div class="flex flex-col gap-4 w-full">
+    <div class="skeleton h-60 w-full rounded-2xl"></div>
+    <div class="skeleton h-4 w-28"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-10 w-32 mt-2"></div>
+  </div>
+
+  <div class="flex flex-col gap-4 w-full">
+    <div class="skeleton h-60 w-full rounded-2xl"></div>
+    <div class="skeleton h-4 w-28"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-10 w-32 mt-2"></div>
+  </div>
+
+  <div class="flex flex-col gap-4 w-full">
+    <div class="skeleton h-60 w-full rounded-2xl"></div>
+    <div class="skeleton h-4 w-28"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-10 w-32 mt-2"></div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+    <!-- Modal -->
+
+<dialog id="my_modal" class="modal backdrop-blur bg-white/10 ">      
+  <div class="modal-box" id="modal">
+  
+ 
+  </div>
+</dialog>
+
+
+ <footer class="mt-30 footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+  <nav>
+    <h6 class="footer-title">Services</h6>
+    <a class="link link-hover">Branding</a>
+    <a class="link link-hover">Design</a>
+    <a class="link link-hover">Marketing</a>
+    <a class="link link-hover">Advertisement</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Company</h6>
+    <a class="link link-hover">About us</a>
+    <a class="link link-hover">Contact</a>
+    <a class="link link-hover">Jobs</a>
+    <a class="link link-hover">Press kit</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Legal</h6>
+    <a class="link link-hover">Terms of use</a>
+    <a class="link link-hover">Privacy policy</a>
+    <a class="link link-hover">Cookie policy</a>
+  </nav>
+  <form>
+    <h6 class="footer-title">Newsletter</h6>
+    <fieldset class="w-80">
+      <label>Enter your email address</label>
+      <div class="join">
+        <input
+          type="text"
+          placeholder="username@site.com"
+          class="input input-bordered join-item" />
+        <button class="btn btn-primary join-item">Subscribe</button>
+      </div>
+    </fieldset>
+  </form>
+</footer> 
+
+
+
+
+
 
 
     <script src="script.js"></script>
